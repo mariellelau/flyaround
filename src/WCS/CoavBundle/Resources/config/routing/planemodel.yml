@@ -1,0 +1,12 @@
+planemodel_index:
+    path:     /
+    defaults: { _controller: "WCSCoavBundle:PlaneModel:index" }
+    methods:  GET
+
+planemodel_show:
+    path:     /{id}/show
+    defaults: { _controller: "WCSCoavBundle:PlaneModel:show" }
+    methods:  GET
+
+
+

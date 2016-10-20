@@ -13,5 +13,13 @@ WCS\CoavBundle\Entity\Reservation:
             type: string
             length: 255
         nbSeats:
-            type: integer
+            type:
+    manyToMany:
+        passengers:
+            targetEntity: User
+            mappedBy: reservation
+    manyToOne:
+        departure:
+            targetEntity: WCS\CoavBundle\Entity\Flight
+            inversedBy: departures
     lifecycleCallbacks: {  }

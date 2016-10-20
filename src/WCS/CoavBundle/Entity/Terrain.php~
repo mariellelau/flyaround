@@ -9,6 +9,15 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Terrain
 {
+    public function __toString()
+    {
+        return $this->name;
+    }
+
+
+
+    // YAML GENERATED CODE
+
     /**
      * @var int
      */
@@ -191,5 +200,78 @@ class Terrain
     public function getCountry()
     {
         return $this->country;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $departures;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->departures = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add departures
+     *
+     * @param \WCS\CoavBundle\Entity\Flight $departures
+     * @return Terrain
+     */
+    public function addDeparture(\WCS\CoavBundle\Entity\Flight $departures)
+    {
+        $this->departures[] = $departures;
+
+        return $this;
+    }
+
+    /**
+     * Remove departures
+     *
+     * @param \WCS\CoavBundle\Entity\Flight $departures
+     */
+    public function removeDeparture(\WCS\CoavBundle\Entity\Flight $departures)
+    {
+        $this->departures->removeElement($departures);
+    }
+
+    /**
+     * Get departures
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDepartures()
+    {
+        return $this->departures;
+    }
+    /**
+     * @var \WCS\CoavBundle\Entity\Flight
+     */
+    private $plane;
+
+
+    /**
+     * Set plane
+     *
+     * @param \WCS\CoavBundle\Entity\Flight $plane
+     * @return Terrain
+     */
+    public function setPlane(\WCS\CoavBundle\Entity\Flight $plane = null)
+    {
+        $this->plane = $plane;
+
+        return $this;
+    }
+
+    /**
+     * Get plane
+     *
+     * @return \WCS\CoavBundle\Entity\Flight 
+     */
+    public function getPlane()
+    {
+        return $this->plane;
     }
 }
